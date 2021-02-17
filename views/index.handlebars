@@ -11,6 +11,13 @@
 			</svg>
 		</button>
 	</nav>
-Begin here (or replace this with any static code already written).
+	<main>
+		<h1>Videos</h1>
+		{{#each videos}}
+			<div id={{title}}>
+				<h2>{{title}}</h2>
+			</div>
+		{{/each}}
+	</main>
 </body>
 </html>

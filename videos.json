@@ -1,0 +1,20 @@
+{
+    "name": "Videos List",
+    "videos": [
+        {
+            "title": "PC Music - POBBLES",
+            "src": "/videos/POBBLES.mp4",
+            "type": "video/mp4"
+        },
+        {
+            "title": "PC Music - POBBLES 2",
+            "src": "/videos/POBBLES.mp4",
+            "type": "video/mp4"
+        },
+        {
+            "title": "PC Music - POBBLES 3",
+            "src": "/videos/POBBLES.mp4",
+            "type": "video/mp4"
+        }
+    ]
+}

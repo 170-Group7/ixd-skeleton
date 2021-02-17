@@ -34,6 +34,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+//allow files in root folder to be used with index.view
 app.get('/', index.view);
 // Example route
 // app.get('/users', user.list);
