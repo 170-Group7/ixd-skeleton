@@ -2,6 +2,9 @@
 <head>
 	<title>Test Page</title>
 	<link rel="stylesheet" type="text/css" href="../css/main.css"  />
+	
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="../js/home.js" type="text/javascript" ></script>
 </head>
 <body>
 	<nav>
@@ -13,11 +16,13 @@
 	</nav>
 	<main>
 		<h1>Videos</h1>
+		<div id="videos">
 		{{#each videos}}
-			<div id={{title}}>
+			<div class="video-listing">
 				<h2>{{title}}</h2>
 			</div>
 		{{/each}}
+		</div>
 	</main>
 </body>
 </html>
