@@ -9,3 +9,21 @@
 .video-box {
   margin-top: 2em;
 }
+.video-box img {
+  width: 50em;
+  border-style: none;
+}
+
+.video-box .card {
+  border-style: solid;
+  border-color: #e7e6e1;
+}
+
+.menu-item .btn {
+  width: 10em;
+  margin-top: 2em;
+}
+
+.bckBtn {
+  margin-top: 2em;
+}

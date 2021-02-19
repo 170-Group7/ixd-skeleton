@@ -1,0 +1,20 @@
+{
+  "menu": [
+    {
+      "title": "Your Videos",
+      "src": "link"
+    },
+    {
+      "title": "Friends",
+      "src": "link"
+    },
+    {
+      "title": "Invite Friends",
+      "src": "link"
+    },
+    {
+      "title": "Message",
+      "src": "link"
+    }
+  ]
+}
