@@ -57,3 +57,7 @@ a{
     float: right;  
     background-color: grey;  
 }  
+
+.form-group {
+    margin-bottom: 1em;
+}
