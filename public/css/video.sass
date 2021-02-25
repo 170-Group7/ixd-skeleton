@@ -1,0 +1,56 @@
+$center-big-play-button: true
+$primary-foreground-color: #fff
+$primary-background-color: #2B333F
+
+.video-js
+    font-size:10px
+    color: $primary-foreground-color
+
+.vjs-default-skin .vjs-big-play-button
+    font-size: 3em
+    $big-play-width: 6em
+    $big-play-height: 3em
+    line-height: $big-play-height
+    height: $big-play-height
+    width: $big-play-width
+    border: 5 em solid $primary-foreground-color
+    border-radius: 0.3em
+
+    @if $center-big-play-button
+        left:50%
+        top:50%
+        margin-left: -($big-play-width/2)
+        margin-top: -($big-play-height/2)
+    @else
+        left:0.5em
+        top:0.5em
+
+.video-js .vjs-control-bar,
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content
+    background-color: $primary-background-color
+    background-color: rgb($primary-background-color, 0.6)
+
+$slider-bg-color: lighten($primary-background-color, 33%)
+
+.video-js .vjs-slider
+    background-color: $slider-bg-color
+    background-color: rgba($slider-bg-color, 0.5)
+
+.video-js .vjs-volume-level,
+.video-js .vjs-play-progress,
+.video-js .vjs-slider-bar
+  background: $primary-foreground-color
+
+.video-js .vjs-load-progress 
+  /* For IE8 we'll lighten the color */
+  background: lighten($slider-bg-color, 25%)
+  /* Otherwise we'll rely on stacked opacities */
+  background: rgba($slider-bg-color, 0.5)
+
+
+.video-js .vjs-load-progress div 
+  /* For IE8 we'll lighten the color */
+  background: lighten($slider-bg-color, 50%)
+  /* Otherwise we'll rely on stacked opacities */
+  background: rgba($slider-bg-color, 0.75)
