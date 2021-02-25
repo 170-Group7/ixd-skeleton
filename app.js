@@ -10,6 +10,8 @@ var handlebars = require("express3-handlebars");
 var index = require("./routes/index");
 var menu = require("./routes/menu");
 var video = require("./routes/video");
+var login = require("./routes/login");
+var forgotPass = require("./routes/forgot-password");
 // Example route
 // var user = require('./routes/user');
 
@@ -38,6 +40,8 @@ if ("development" == app.get("env")) {
 app.get("/", index.view);
 app.get("/menu", menu.view);
 app.get("/video", video.view);
+app.get("/login", login.view);
+app.get("/forgot-password", forgotPass.view);
 //app.get("/video/:id", video.view);
 // Example route
 // app.get('/users', user.list);

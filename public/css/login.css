@@ -1,0 +1,41 @@
+body  
+{  
+    font-family: 'Arial';  
+}  
+#login{  
+        padding: 80px;  
+        background: #FFD700;  
+        border-radius: 15px ;  
+}  
+h1{  
+    color: #FFD700;  
+    padding: 20px;  
+}  
+label{  
+    color: #FFFFFF;  
+    font-size: 17px;  
+}  
+
+#Uname, #Pass{  
+    border: none;  
+    border-radius: 3px;  
+}  
+#log{  
+    border: none;  
+    border-radius: 17px;  
+}  
+-a{  
+    background-color: grey;  
+}  
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    font-weight: bold;
+} 
+
+p {
+    display: inline-block;
+}
