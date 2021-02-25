@@ -1,0 +1,73 @@
+<html>
+<head>
+	<title>7 - A Social Technology for Student to Form a Study Group</title>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+	<link href="/css/main.css" rel="stylesheet">
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+    <link href="/css/video.css" rel="stylesheet">
+    <style>
+    video {
+        width: 20em;
+        height: 50em;
+    }
+    </style>
+</head>
+<body>
+	<div class="container">
+        <div class="row">
+            <video id="lecture-video" class="video-js vjs-default-skin" width="960" height="540" controls preload="auto" data-setup='{ "playbackRates": [0.5, 1, 1.5, 2] }'></video>
+        </div>
+        <button type="button" class="btn btn-primary" id="scrShotBtn">ScreenShot</button>
+        <div class="row">
+            <canvas></canvas>
+        </div>
+	</div>
+    <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <script src="http://reference.dashif.org/dash.js/nightly/dist/dash.all.debug.js"></script>
+    <script src="/js/videojs-dash.min.js"></script>
+    
+    <script>
+        var player = videojs('lecture-video',{
+            fluid:true,
+            html5:{nativeCaptions:false}, // tricky
+            aspectRatio:"16:9"
+        });
+        var video = document.querySelector("video");
+        var w,h, ratio;
+        var canvas = document.querySelector("canvas");
+        var context = canvas.getContext('2d');
+        player.ready(function() {
+            player.src({
+                src: '/video/stream.mpd',//Change src here
+                type: 'application/dash+xml'
+            });
+        });
+        video.addEventListener('loadedmetadata', function() {
+            ratio = video.videoWidth/ video.videoHeight 
+            
+            w = video.videoWidth* 0.75;
+            h = video.videoHeight* 0.75;
+            console.log(video.videoWidth);
+            console.log(video.videoHeight);
+            canvas.width=w;
+            canvas.height=h;
+            console.log(canvas.width);
+            console.log(canvas.height);
+        },false)
+        $(document).ready(function () {
+            $('#scrShotBtn').click(function(){
+               
+                //console.log(video.clientWidth)
+                //console.log(video.clientHeight)
+                context.fillRect(0, 0, w, h);
+                context.drawImage(video, 0, 0, w, h);
+            })
+        });
+    </script>
+</body>
+</html>

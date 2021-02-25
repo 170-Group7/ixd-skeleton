@@ -1,0 +1,51 @@
+.video-js {
+  font-size: 10px;
+  color: #fff;
+}
+
+.vjs-default-skin .vjs-big-play-button {
+  font-size: 3em;
+  line-height: 3em;
+  height: 3em;
+  width: 6em;
+  border: 1 em solid #fff;
+  border-radius: 0.3em;
+  left: 50%;
+  top: 50%;
+  margin-left: -3em;
+  margin-top: -1.5em;
+}
+
+.video-js .vjs-control-bar,
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content {
+  background-color: #2b333f;
+  background-color: rgba(43, 51, 63, 0.6);
+}
+
+.video-js .vjs-slider {
+  background-color: #73859f;
+  background-color: rgba(115, 133, 159, 0.5);
+}
+
+.video-js .vjs-volume-level,
+.video-js .vjs-play-progress,
+.video-js .vjs-slider-bar {
+  background: #fff;
+}
+
+.video-js .vjs-load-progress {
+  /* For IE8 we'll lighten the color */
+  background: #bfc7d3;
+  /* Otherwise we'll rely on stacked opacities */
+  background: rgba(115, 133, 159, 0.5);
+}
+
+.video-js .vjs-load-progress div {
+  /* For IE8 we'll lighten the color */
+  background: white;
+  /* Otherwise we'll rely on stacked opacities */
+  background: rgba(115, 133, 159, 0.75);
+}
+
+/*# sourceMappingURL=video.css.map */
