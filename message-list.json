@@ -1,0 +1,36 @@
+{
+    "conversations": [
+        {
+            "recipients": [
+                {
+                    "first-name": "Joe",
+                    "last-name": "Boe"
+                },
+                {
+                    "first-name": "Joe2",
+                    "last-name": "Boe"
+                }
+            ],
+            "most-recent-message": {
+                "author": "Joe",
+                "message": "Sounds great!",
+                "date": "1/2/21",
+                "time": "2:05PM"
+            }
+        },
+        {
+            "recipients": [
+                {
+                    "first-name": "Bob",
+                    "last-name": "Job"
+                }
+            ],
+            "most-recent-message": {
+                "author": "Me",
+                "message": "Ok. Cool.",
+                "date": "1/1/21",
+                "time": "7:45PM"
+            }
+        }
+    ]
+}

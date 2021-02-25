@@ -13,12 +13,12 @@
       "src": "link"
     },
     {
-      "title": "Message",
-      "src": "link"
+      "title": "Messages",
+      "src": "http://localhost:3000/messages"
     },
     {
       "title": "Sign Out",
-      "src": "link"
+      "src": "http://localhost:3000/login"
     }
   ]
 }

@@ -17,6 +17,7 @@ var newevent = require("./routes/newEvent");
 var confirmation = require("./routes/confirmation");
 var success = require("./routes/success");
 var friends = require("./routes/friends");
+var messages = require("./routes/messages");
 // Example route
 // var user = require('./routes/user');
 
@@ -52,6 +53,7 @@ app.get("/newevent", newevent.view);
 app.get("/confirmation", confirmation.view);
 app.get("/success", success.view);
 app.get("/friends", friends.view);
+app.get("/messages", messages.view);
 //app.get("/video/:id", video.view);
 // Example route
 // app.get('/users', user.list);
