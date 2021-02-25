@@ -16,6 +16,7 @@ var inviteFriends = require("./routes/invite-friends");
 var newevent = require("./routes/newEvent");
 var confirmation = require("./routes/confirmation");
 var success = require("./routes/success");
+var friends = require("./routes/friends");
 // Example route
 // var user = require('./routes/user');
 
@@ -50,6 +51,7 @@ app.get("/invite-friends", inviteFriends.view);
 app.get("/newevent", newevent.view);
 app.get("/confirmation", confirmation.view);
 app.get("/success", success.view);
+app.get("/friends", friends.view);
 //app.get("/video/:id", video.view);
 // Example route
 // app.get('/users', user.list);
