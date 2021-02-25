@@ -15,6 +15,10 @@
     {
       "title": "Message",
       "src": "link"
+    },
+    {
+      "title": "Sign Out",
+      "src": "link"
     }
   ]
 }

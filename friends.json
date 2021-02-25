@@ -1,0 +1,16 @@
+{
+    "friends" : [
+        {
+            "first-name": "Joe",
+            "last-name": "Loe"
+        },
+        {
+            "first-name": "Joe2",
+            "last-name": "Loe"
+        },
+        {
+            "first-name": "Joe3",
+            "last-name": "Loe"
+        }
+    ]
+}

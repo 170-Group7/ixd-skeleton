@@ -11,6 +11,7 @@ var index = require("./routes/index");
 var menu = require("./routes/menu");
 var login = require("./routes/login");
 var forgotPass = require("./routes/forgot-password");
+var inviteFriends = require("./routes/invite-friends");
 // Example route
 // var user = require('./routes/user');
 
@@ -40,6 +41,7 @@ app.get("/", index.view);
 app.get("/menu", menu.view);
 app.get("/login", login.view);
 app.get("/forgot-password", forgotPass.view);
+app.get("/invite-friends", inviteFriends.view);
 //app.get("/video/:id", video.view);
 // Example route
 // app.get('/users', user.list);
