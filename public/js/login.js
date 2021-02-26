@@ -12,7 +12,7 @@ function initializePage() {
 function setUpLogInButton() {
     $('#log').click(() => {
         //use if viewing from local node server
-        window.location.href = "http://localhost:3000/"; 
+        window.location.href = "http://localhost:3000/index"; 
 
         //use if viewing from remote heroku server
         // window.location.href = "herokulink.com/login"

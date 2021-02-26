@@ -44,7 +44,12 @@ if ("development" == app.get("env")) {
   app.use(express.errorHandler());
 }
 
-app.get("/", index.view);
+
+app.get('/', function(req, res){
+  res.redirect('/login');
+});
+
+app.get("/index", index.view);
 app.get("/menu", menu.view);
 app.get("/video", video.view);
 app.get("/login", login.view);
