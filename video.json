@@ -4,7 +4,7 @@
       "title": "CSE170",
       "name": "Lecture-1 Introduction",
       "professor-name": "Scott Klemmer",
-      "src": "/video",
+      "src": "https://team7-a6.herokuapp.com/video",
       "type": "video/mp4",
       "img": "/img/1.png"
     },
@@ -12,7 +12,7 @@
       "title": "CSE170",
       "name": "Lecture-2 Needfinding",
       "professor-name": "Scott Klemmer",
-      "src": "/video",
+      "src": "https://team7-a6.herokuapp.com/video",
       "type": "video/mp4",
       "img": "/img/2.png"
     },
@@ -20,7 +20,7 @@
       "title": "CSE170",
       "name": "Lecture-3 Prototyping",
       "professor-name": "Scott Klemmer",
-      "src": "/video",
+      "src": "https://team7-a6.herokuapp.com/video",
       "type": "video/mp4",
       "img": "/img/3.png"
     }

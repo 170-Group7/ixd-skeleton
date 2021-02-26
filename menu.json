@@ -2,23 +2,23 @@
   "menu": [
     {
       "title": "Your Videos",
-      "src": "http://localhost:3000/your-videos"
+      "src": "https://team7-a6.herokuapp.com/your-videos"
     },
     {
       "title": "Friends",
-      "src": "http://localhost:3000/friends"
+      "src": "https://team7-a6.herokuapp.com/friends"
     },
     {
       "title": "Invite Friends",
-      "src": "http://localhost:3000/invite-friends"
+      "src": "https://team7-a6.herokuapp.com/invite-friends"
     },
     {
       "title": "Messages",
-      "src": "http://localhost:3000/messages"
+      "src": "https://team7-a6.herokuapp.com/messages"
     },
     {
       "title": "Sign Out",
-      "src": "http://localhost:3000/login"
+      "src": "https://team7-a6.herokuapp.com/login"
     }
   ]
 }
