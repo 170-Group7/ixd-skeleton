@@ -2,7 +2,7 @@
   "menu": [
     {
       "title": "Your Videos",
-      "src": "link"
+      "src": "http://localhost:3000/your-videos"
     },
     {
       "title": "Friends",
@@ -10,7 +10,7 @@
     },
     {
       "title": "Invite Friends",
-      "src": "link"
+      "src": "http://localhost:3000/invite-friends"
     },
     {
       "title": "Messages",
