@@ -13,8 +13,26 @@
     <script src="js/login.js" type="text/javascript"></script>
 </head>    
 <body>    
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : 272022877635789,
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v3.2'
+        });
+      };
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+             js.src = "https://connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+
+    </script>
     <div class="container">
-        <h1 class="text-center">Login Page</h1>
+        <h1 class="text-center">7</h1>
         <form id="login" method="get" action="/placeholder">    
             <div class="form-group">
                 <label for="Uname">User Name</label>    
@@ -27,6 +45,12 @@
             <div class="form-group">
                 <input type="button" name="log" id="log" class="form-control" value="Log In Here">       
             </div>
+	      <form class="login-form">
+                  <h4 id="facebookUsername" class="text-center"></h4>
+                  <p class="facebookLogin">You can login through Facebook here. 
+                  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button><br>
+                  <a href="https://www.facebook.com/help/570785306433644?helpref=hc_global_nav">Help for Your Facebook Account</a>
+                  </p>
             <div class="form-check">
                 <input type="checkbox" name="check" id="check" class="form-check-input">    
                 <label for="check" class="form-check-label">Remember me</label>    
