@@ -19,6 +19,8 @@ var success = require("./routes/success");
 var friends = require("./routes/friends");
 var messages = require("./routes/messages");
 var yourVideos = require("./routes/your-videos");
+var notification = require("./routes/notification");
+const { response } = require("express");
 // Example route
 // var user = require('./routes/user');
 
@@ -44,9 +46,8 @@ if ("development" == app.get("env")) {
   app.use(express.errorHandler());
 }
 
-
-app.get('/', function(req, res){
-  res.redirect('/login');
+app.get("/", function (req, res) {
+  res.redirect("/login");
 });
 
 app.get("/index", index.view);
@@ -61,6 +62,12 @@ app.get("/success", success.view);
 app.get("/friends", friends.view);
 app.get("/messages", messages.view);
 app.get("/your-videos", yourVideos.view);
+app.get("/notification", notification.view);
+app.post("/notification", look);
+function look(req, res) {
+  console.log(req.body.phones);
+  res.send(req.body.phones);
+}
 //app.get("/video/:id", video.view);
 // Example route
 // app.get('/users', user.list);
