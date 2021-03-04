@@ -3,8 +3,8 @@ repo
 
 Project Description
 
-1. In the ==.env== file, please add the following infomation to activate Twilio API service
+## In the **.env** file, please add the following infomation to activate Twilio API service
 
-TWILIOSID = [Your TWILIOSID]
-TWILIOTOKEN = [Your TWILIOTOKEN]
-TWILIOPHONE = [YOUR TWILIONUMBER]
+TWILIOSID = [Your TWILIOSID]<br/>
+TWILIOTOKEN = [Your TWILIOTOKEN]<br/>
+TWILIOPHONE = [YOUR TWILIONUMBER]<br/>
