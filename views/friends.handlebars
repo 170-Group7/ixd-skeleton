@@ -16,6 +16,7 @@
 	<script src="js/friends.js" type="module"></script>
 
     <link rel="stylesheet" href="css/login.css">    
+    <link rel="stylesheet" href="css/friends.css">    
 </head>    
 <body>    
     <div class="container">
@@ -29,9 +30,35 @@
 			<div class="col-sm">
 			</div>
 		</div>
-		<div class="list-group" id="friend-list-container">
+
+		<div class="input-group" mb-1>
+			<input type="text" class="form-control" id="search-input" placeholder="Username" aria-label="Friend's username" aria-describedby="friend-search">
+			<div class="input-group-append">
+				<button class="btn btn-warning" type="button" id="friend-search">Search</button>
+			</div>
+		</div>
+
+		<div class="list-group mb-3 overflow-auto " id="friend-list-container">
 			{{!-- will be filled with friends using JS --}}
 		</div>
+
+		<div id="add-friends-container">
+			<h2>Add friends</h2>
+			<a id="chevron">
+				<svg id="chev-right" style="width:24px;height:24px" viewBox="0 0 24 24">
+				   <path fill="#ffbb3f" d="M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12M8.6,16.6L13.2,12L8.6,7.4L10,6L16,12L10,18L8.6,16.6Z" />
+			    </svg>
+			</a>
+		</div>
+		<div class="row" style="display:none" id="add-div">
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" id="add-friend-text" name="add-friend" placeholder="Email" aria-label="Friend's email" aria-describedby="add-friend">
+				<div class="input-group-append">
+					<button class="btn btn-warning" type="button" id="add-friend-btn">Add</button>
+				</div>
+			</div>
+		</div>
+		
     </div>
 </body>    
 </html> 

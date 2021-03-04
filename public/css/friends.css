@@ -1,0 +1,8 @@
+#friend-list-container {
+    height: 50vh;
+}
+
+h2 {
+    margin-right: 5px;
+    display: inline-flex;
+}
