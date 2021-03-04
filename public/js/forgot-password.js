@@ -12,10 +12,10 @@ function initializePage() {
 function setUpSubmitButton() {
     $('#submit').click(() => {
         //use if viewing from local node server
-        window.alert("Check your email to reset your password.");
-        // window.location.href = "http://localhost:3000/login"; 
+        window.alert('Check your email to reset your password.');
+        window.location.href = '/login'; 
 
         //use if viewing from remote heroku server
-        window.location.href = "https://team7-a6.herokuapp.com/login"
+        // window.location.href = 'https://team7-a6.herokuapp.com/login'
     });
 }

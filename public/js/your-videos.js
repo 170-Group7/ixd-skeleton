@@ -15,7 +15,6 @@ function initializePage() {
 
 function setUpVideos() {
     let videoListDivs = $('.video-box').children();
-    console.log(videoListDivs);
     videoListDivs.each((index) => jQuery(videoListDivs[index]).click(videoClickHandler));
 }
 

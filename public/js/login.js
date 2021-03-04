@@ -1,20 +1,35 @@
 'use strict';
+import {auth} from './firebase-init.js';
 
-//CODE FOR CLICKING ON THE CELLS OF THE HOMEPAGE
 $(document).ready(function () {
     initializePage();
 } );
 
 function initializePage() {
-    setUpLogInButton();
+    auth.onAuthStateChanged((user) => {
+        if(user) {
+            window.location.href = '/index';
+        }
+        else {
+            setUpLogInButton();
+        }
+    })
 }
 
 function setUpLogInButton() {
     $('#log').click(() => {
-        //use if viewing from local node server
-        // window.location.href = "http://localhost:3000/index"; 
+        //get user name / email
+        const userName = $('#Uname').val();
+        const pass = $('#Pass').val();
 
-        //use if viewing from remote heroku server
-        window.location.href = "https://team7-a6.herokuapp.com/index"
+        auth.signInWithEmailAndPassword(userName, pass)
+            .then((userCredential) => {
+                //use if viewing from local node server
+                window.location.href = '/index';
+
+                //use if viewing from remote heroku server
+                // window.location.href = 'https://team7-a6.herokuapp.com/index'
+            })
+            .catch((e) => alert(e));
     });
 }

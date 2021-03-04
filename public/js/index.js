@@ -1,31 +1,26 @@
 'use strict';
-
-const watchInviteDiv = '<div class="watch-invite">' +
-                        '   <a href="#">Watch</a>' + 
-                        '   <a href="#">Invite</a>' + 
-                        '</div>';
+import {auth} from './firebase-init.js';
 
 $(document).ready(function () {
     initializePage();
 });
 
 function initializePage() {
-    setUpVideos();
+    auth.onAuthStateChanged((user) => {
+        if(user) {
+            let atIndex = user.email.indexOf('@');
+            let name = user.email.slice(0, atIndex);
+            fillName(name);
+        }
+        else {
+            //move back to login 
+            alert('You shouldn\'t be here..');
+            window.location.href = '/login';
+        }
+    })
 }
 
-function setUpVideos() {
-    let videoListDivs = $('.video-box').children();
-    console.log(videoListDivs);
-    videoListDivs.each((index) => jQuery(videoListDivs[index]).click(videoClickHandler));
-}
-
-function videoClickHandler(el) {
-    console.log("clicked something");
-    $(this).find('.watch-invite').toggle();
-    /*if($(this).find('.watch-invite').length > 0) {
-        $(this).find('.watch-invite').toggle();
-    }
-    else {
-        jQuery(el.Target).after(watchInviteDiv);
-    }*/
+function fillName(name) {
+    let text = $('#greeting').text();
+    $('#greeting').text(`${text} ${name}`);
 }
