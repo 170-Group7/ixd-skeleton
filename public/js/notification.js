@@ -42,7 +42,11 @@ $("#sendBtn").click(e => {
     }
   }
   console.log(phones.length);
-  $.post("/notification", { phones: phones }, complete);
+  if (phones.length != 0) {
+    $.post("/notification", { phones: phones }, complete);
+  } else {
+    alert("no add any participants' phone");
+  }
 });
 
 function complete() {

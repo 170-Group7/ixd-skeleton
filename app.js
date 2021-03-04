@@ -63,11 +63,8 @@ app.get("/friends", friends.view);
 app.get("/messages", messages.view);
 app.get("/your-videos", yourVideos.view);
 app.get("/notification", notification.view);
-app.post("/notification", look);
-function look(req, res) {
-  console.log(req.body.phones);
-  res.send(req.body.phones);
-}
+app.post("/notification", notification.sendSMS);
+
 //app.get("/video/:id", video.view);
 // Example route
 // app.get('/users', user.list);
