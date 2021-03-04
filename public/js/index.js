@@ -13,8 +13,6 @@ function initializePage() {
             fillName(name);
         }
         else {
-            //move back to login 
-            alert('You shouldn\'t be here..');
             window.location.href = '/login';
         }
     })
