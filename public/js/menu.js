@@ -9,12 +9,32 @@ function initializePage() {
     auth.onAuthStateChanged((user) => {
         if(user) {
             //set up buttons
+            setUpYourVideos();
+            setUpFriends();
+            setUpInviteFriends();
+            setUpMessages();
             setUpSignOut();
         }
         else {
             window.location.href = '/login';
         }
     })
+}
+
+function setUpYourVideos() {
+    //TODO
+}
+
+function setUpFriends() {
+    //TODO
+}
+
+function setUpInviteFriends() {
+    //TODO
+}
+
+function setUpMessages() {
+    //TODO
 }
 
 function setUpSignOut() {
