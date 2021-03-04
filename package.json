@@ -14,11 +14,13 @@
   },
   "dependencies": {
     "bootstrap-icons": "^1.4.0",
+    "dotenv": "^8.2.0",
     "express": "3.x",
     "express3-handlebars": "*",
     "mongodb": "*",
     "mongoose": "*",
     "sass": "^1.32.8",
+    "twilio": "^3.57.0",
     "videojs_snapshot_new": "^1.0.3",
     "videojs-hls-stream-selector": "^0.1.0"
   },
