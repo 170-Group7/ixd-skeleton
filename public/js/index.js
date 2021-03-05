@@ -19,7 +19,7 @@ function initializePage() {
       if (usertoken.status == "connected") {
         fillName(userinfo.name);
       } else {
-        //window.location.href = "/login";
+        window.location.href = "/login";
       }
     }
   });
