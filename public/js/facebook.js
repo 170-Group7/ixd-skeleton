@@ -14,6 +14,7 @@ function statusChangeCallback(response) {
   if (response.status === "connected") {
     // Logged into your app and Facebook.
     console.log("Successfully logged in with Facebook");
+    localStorage.setItem("fbtoken", JSON.stringify(response));
     FB.api("/me?fields=name,first_name,picture.width(480)", changeUser);
   }
   if (response.status === "unknown") {
@@ -24,7 +25,8 @@ function statusChangeCallback(response) {
 
 function changeUser(response) {
   $(".facebookLogin").hide();
-  console.log(response.name);
+  console.log(response);
+  localStorage.setItem("userinfo", JSON.stringify(response));
   window.location.href = "/index";
 
   //$("#name").text(response.name);
