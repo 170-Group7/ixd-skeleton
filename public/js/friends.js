@@ -19,24 +19,27 @@ let usertoken = JSON.parse(localStorage.getItem("fbtoken"));
 $(document).ready(function () {
   initializePage();
 });
-
+function setup() {
+  let elToAdd = jQuery(friendDiv);
+  elToAdd.addClass("no-friends");
+  elToAdd.find("p").text("No friends found.");
+  $("#friend-list-container").append(elToAdd);
+  populateFriends();
+  $("#search-input").keyup(search);
+  setUpChevron();
+  setUpAddButton();
+}
 async function initializePage() {
   // const initializePage = async () => {
   auth.onAuthStateChanged(async user => {
     if (user) {
       //do things
-      let elToAdd = jQuery(friendDiv);
-      elToAdd.addClass("no-friends");
-      elToAdd.find("p").text("No friends found.");
-      $("#friend-list-container").append(elToAdd);
-      populateFriends();
-      $("#search-input").keyup(search);
-      setUpChevron();
-      setUpAddButton();
+      setup();
     } else {
       //do other things
       if (usertoken.status == "connected") {
         fillName(userinfo.name);
+        setup();
       } else {
         window.location.href = "/login";
       }
