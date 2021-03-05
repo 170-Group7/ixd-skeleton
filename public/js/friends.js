@@ -38,7 +38,6 @@ async function initializePage() {
     } else {
       //do other things
       if (usertoken.status == "connected") {
-        fillName(userinfo.name);
         setup();
       } else {
         window.location.href = "/login";
