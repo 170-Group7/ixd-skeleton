@@ -1,0 +1,27 @@
+.time-schedule {
+  /*grid*/
+  display: grid;
+  /*“I want 2 columns with each of the child elements having an equal width (1 fraction) with a 5px gap between them”*/
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 0.1em;
+}
+
+.time {
+  display: grid;
+  grid-row-gap: 0.15em;
+  grid-template-rows: repeat(25, 10em);
+}
+.schedule {
+  display: grid;
+  grid-row-gap: 0.15em;
+  grid-template-rows: repeat(24, 10em);
+}
+
+.time-unit {
+  background-color: #8ac4d0;
+  border: 0.015em solid #212121;
+}
+
+.schedule-unit {
+  border: 0.2em solid #f4d160;
+}

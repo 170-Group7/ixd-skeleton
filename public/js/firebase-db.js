@@ -7,7 +7,10 @@ const CONVERSATIONS = 'conversations/';
 const MESSAGES = 'messages/';
 const EMAIL = 'email/';
 const FRIENDS = 'friends/';
+const UIDS = 'uids/';
+const EMAILS = 'emails/';
 
+//Returns all the user objects
 const getUsers = async () => {
     let users;
     await db.ref(USERS).once('value')
@@ -54,10 +57,93 @@ const getFriends = async () => {
     return friends;
 }
 
+//Adds user with email bEmail as friend of user (currentUser) with userEmail vice versa.
+// Alert is shown if friend is not found. 
+const friend = async (userEmail, bEmail) => {
+    let userUid, bUid;
+    let userFriends, bFriends;
+    let userNumFriends, bNumFriends;
+
+    userUid = await getUid(userEmail);
+    bUid = await getUid(bEmail);
+
+    if(!bUid) {
+        alert('Friend not found. Try Again');
+        return;
+    }
+
+    await db.ref(`${USERS}${userUid}/${FRIENDS}`).once('value')
+        .then((snapshot) => {
+            userFriends = snapshot.val();
+        })
+        .catch((e) => {
+            alert(e);
+            return;
+        });
+    
+    await db.ref(`${USERS}${bUid}/${FRIENDS}`).once('value')
+        .then((snapshot) => {
+            bFriends = snapshot.val();
+        })
+        .catch((e) => {
+            alert(e);
+            return;
+        });
+    
+    userNumFriends = userFriends.length;
+    bNumFriends = bFriends.length;
+
+    let alreadyFriends = false;
+    userFriends.forEach((friend) => {
+        if(bUid == friend) {
+            alreadyFriends = true;
+        }
+    });
+
+    if(!alreadyFriends){
+        await db.ref(`${USERS}${userUid}/${FRIENDS}${userNumFriends}`).set(bUid)
+            .catch((e) => alert(e));
+        
+        await db.ref(`${USERS}${bUid}/${FRIENDS}${bNumFriends}`).set(userUid)
+            .catch((e) => alert(e));
+        alert('Added friend!'); 
+        location.reload();
+    }
+    else {
+        alert('You\'re already friends!');
+    }
+}
+
+const getEmail = async (uid) => {
+    //TODO
+}
+
+//Returns the uid of the user with the given email
+const getUid = async (email) => {
+    let uid;
+    let emailEncoded = encodeEmail(email); 
+    await db.ref(`${UIDS}${emailEncoded}`).once('value')
+        .then((snapshot) => {
+            uid = snapshot.val();
+        })
+        .catch(() => {
+            uid = null
+        });
+    return uid;
+}
+
+//Encodes email to a database key friendly string
+const encodeEmail = (email) => {
+    return encodeURIComponent(email).replace('.', 'dot');
+}
+
 export {DB_URL,
         USERS,
         CONVERSATIONS,
         getUsers,
         getConversations,
         getMessages,
-        getFriends};
+        getFriends,
+        friend,
+        getEmail,
+        getUid};

@@ -12,6 +12,10 @@ function initializePage() {
         }
         else {
             setUpLogInButton();
+
+            $('.message a').click(function(){
+                $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+            });
         }
     })
 }
@@ -33,10 +37,6 @@ function setUpLogInButton() {
             .catch((e) => alert(e));
     });
 }
-$('.message a').click(function(){
-    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
- });
- 
  
 function checkLoginState() {
    FB.getLoginStatus(function(response) {

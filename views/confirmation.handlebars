@@ -36,21 +36,21 @@
 			<div class="row mb-4">
 				<label for="lecture" class="col-sm-2 col-form-label">Lecture</label>
 				<div class="col-sm-10 col-form-label">
-					<b>CSE 170- Lecture 1</b>
+					<b id="lecture_label">CSE 170- Lecture 1</b>
 				</div>
 			</div>
 
 			<div class="row mb-4">
 				<label for="date" class="col-sm-2 col-form-label">Date</label>
 				<div class="col-sm-10 col-form-label">
-                    <b>2011-08-19</b>
+                    <b id="date_label">2011-08-19</b>
   				</div>
 			</div>
 
 			<div class="row mb-4">
   				<label for="time-input" class="col-sm-2 col-form-label">Time</label>
   				<div class="col-sm-10 col-form-label">
-                    <b>13:45:00</b>
+                    <b id="time_label">13:45:00</b>
   				</div>
 			</div>
 
@@ -70,10 +70,11 @@
                 <div class="col-sm-2"></div>
 				<div class="col-sm">
                      <a class="btn btn-outline-warning" href="/newevent" role="button">Cancel</a>
-                    <a class="btn btn-warning " href="/success" role="button">Confirm</a>
+                    <a class="btn btn-warning " id="confirmBtn" role="button">Confirm</a>
                    
 				</div>
 			</div>
 		</div>
+		<script src="/js/confirmation.js"></script>
 </body>
 </html>
