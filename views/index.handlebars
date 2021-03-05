@@ -28,12 +28,6 @@
 					</svg>
 					Create
 				</a>
-				<a class="btn btn-warning d-flex align-items-center ms-2" href="/schedule" role="button">
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
-  						<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-					</svg>
-					Schedule
-				</a>
     		</div>
 			<div class="col-sm d-flex justify-content-center">
 				<h1 id="greeting">Hello</h1>
@@ -47,7 +41,7 @@
 			<div class="col-2">
     		</div>
 			<div class="col-sm d-flex justify-content-center">
-				<h3>Do you want to finished unwatched videos?</h3>
+				<h3>Do you want to finish unwatched videos?</h3>
 			</div>
 			<div class="col-2">
 			</div>
@@ -56,20 +50,18 @@
 		{{#each videos}}
 		<div class="row video-box">
 			<div class="d-flex justify-content-center">
-				<div class="card" style="width: 30rem;">
-					<div class="card-header">
-						{{title}}
-					</div>
-					<img src={{img}} class="img-thumbnail">
-					<div class="card-body">
-						<h5 class="card-title">{{name}}</h5>
-						<p class="card-text">{{professor-name}}</p>
-						<div class="watch-invite" style="-display:none;">
-							<a href={{src}} class="btn btn-primary watch-btn">Watch</a>
-							{{!-- <a href="/invite-friends" class="btn invite-btn">Invite</a> --}}
+					<div class="card" style="width: 30rem;">
+				<a href={{src}} style="text-decoration: none;color: black;">
+						<div class="card-header">
+							{{title}}
 						</div>
+						<img src={{img}} load="lazy" class="img-thumbnail">
+						<div class="card-body">
+							<h5 class="card-title">{{name}}</h5>
+							<p class="card-text">{{professor-name}}</p>
+						</div>
+				</a>
 					</div>
-				</div>
 			</div>
 		</div>
 		{{/each}}

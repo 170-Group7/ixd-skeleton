@@ -21,6 +21,11 @@
       "id": "messages"
     },
     {
+      "title": "Schedule",
+      "src": "/schedule",
+      "id": "schedule"
+    },
+    {
       "title": "Sign Out",
       "src": "/login",
       "id": "sign-out"
