@@ -1,48 +1,54 @@
-'use strict';
-import {auth} from './firebase-init.js';
+"use strict";
+import { auth } from "./firebase-init.js";
 
+let userinfo = JSON.parse(localStorage.getItem("userinfo"));
+let usertoken = JSON.parse(localStorage.getItem("fbtoken"));
 $(document).ready(function () {
-    initializePage();
+  initializePage();
 });
 
 function initializePage() {
-    auth.onAuthStateChanged((user) => {
-        if(user) {
-            //set up buttons
-            setUpYourVideos();
-            setUpFriends();
-            setUpInviteFriends();
-            setUpMessages();
-            setUpSignOut();
-        }
-        else {
-            window.location.href = '/login';
-        }
-    })
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      //set up buttons
+      setUpYourVideos();
+      setUpFriends();
+      setUpInviteFriends();
+      setUpMessages();
+      setUpSignOut();
+    } else {
+      if (usertoken.status == "connected") {
+        fillName(userinfo.name);
+      } else {
+        window.location.href = "/login";
+      }
+    }
+  });
 }
 
 function setUpYourVideos() {
-    //TODO
+  //TODO
 }
 
 function setUpFriends() {
-    //TODO
+  //TODO
 }
 
 function setUpInviteFriends() {
-    //TODO
+  //TODO
 }
 
 function setUpMessages() {
-    //TODO
+  //TODO
 }
 
 function setUpSignOut() {
-    $('#sign-out').click(() => {
-        auth.signOut()
-            .then(() => {
-                //dont have to do anything
-            })
-            .catch((e) => alert(e))
-    });
+  $("#sign-out").click(() => {
+    auth
+      .signOut()
+      .then(() => {
+        //dont have to do anything
+      })
+      .catch(e => alert(e));
+  });
 }
