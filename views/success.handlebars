@@ -35,21 +35,21 @@
 			<div class="row mb-4">
 				<label for="lecture" class="col-sm-2 col-form-label">Lecture</label>
 				<div class="col-sm-10 col-form-label">
-					<b>CSE 170- Lecture 1</b>
+					<b id="lecture_label">CSE 170- Lecture 1</b>
 				</div>
 			</div>
 
 			<div class="row mb-4">
 				<label for="date" class="col-sm-2 col-form-label">Date</label>
 				<div class="col-sm-10 col-form-label">
-                    <b>2011-08-19</b>
+                    <b id="date_label">2011-08-19</b>
   				</div>
 			</div>
 
 			<div class="row mb-4">
   				<label for="time-input" class="col-sm-2 col-form-label">Time</label>
   				<div class="col-sm-10 col-form-label">
-                    <b>13:45:00</b>
+                    <b id="time_label">13:45:00</b>
   				</div>
 			</div>
 
@@ -70,8 +70,15 @@
 				<div class="col-sm">
 					<a class="btn btn-outline-warning" role="button" href="/notification">Send Notification</a>
                     <a class="btn btn-warning " href="/index" role="button">Back to Home</a>
+					<a class="btn btn-warning" href="/schedule" role="button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+  						<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+					</svg>
+					Schedule
+					</a>
 				</div>
 			</div>
 		</div>
+		<script src='/js/success.js'></script>
 </body>
 </html>

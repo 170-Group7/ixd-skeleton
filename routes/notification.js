@@ -20,9 +20,8 @@ exports.sendSMS = function (req, res) {
     res.send("No settle up Twilio Token");
     return;
   }
-  console.log(client.username);
+
   phones = req.body.phones;
-  console.log(phones);
   for (let i in phones) {
     console.log(phones[i] + " " + accountNumber);
     client.messages

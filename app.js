@@ -66,7 +66,7 @@ app.get("/your-videos", yourVideos.view);
 app.get("/notification", notification.view);
 app.get("/schedule", schedule.view);
 app.post("/notification", notification.sendSMS);
-
+app.post("/newevent", confirmation.newevent);
 //app.get("/video/:id", video.view);
 // Example route
 // app.get('/users', user.list);
