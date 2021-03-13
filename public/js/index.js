@@ -1,8 +1,6 @@
 "use strict";
 import { auth } from "./firebase-init.js";
 let isFB = false;
-let userinfo = JSON.parse(localStorage.getItem("userinfo"));
-let usertoken = JSON.parse(localStorage.getItem("fbtoken"));
 $(document).ready(function () {
   initializePage();
 });
@@ -14,12 +12,13 @@ function initializePage() {
       let name = user.email.slice(0, atIndex);
       fillName(name);
     } else {
-      console.log(usertoken);
-      console.log(userinfo);
+      let userinfo = JSON.parse(localStorage.getItem("userinfo"));
+      let usertoken = JSON.parse(localStorage.getItem("fbtoken"));
+      if(!userinfo && !usertoken) {
+        window.location.href = "/login";
+      }
       if (usertoken.status == "connected") {
         fillName(userinfo.name);
-      } else {
-        window.location.href = "/login";
       }
     }
   });

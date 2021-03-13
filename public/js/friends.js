@@ -14,8 +14,6 @@ const CHEV_DOWN =
   "</svg>";
 
 var addOpen = false;
-let userinfo = JSON.parse(localStorage.getItem("userinfo"));
-let usertoken = JSON.parse(localStorage.getItem("fbtoken"));
 $(document).ready(function () {
   initializePage();
 });
@@ -37,10 +35,13 @@ async function initializePage() {
       setup();
     } else {
       //do other things
+      let userinfo = JSON.parse(localStorage.getItem("userinfo"));
+      let usertoken = JSON.parse(localStorage.getItem("fbtoken"));
+      if(!userinfo && !usertoken) {
+        window.location.href = "/login";
+      }
       if (usertoken.status == "connected") {
         setup();
-      } else {
-        window.location.href = "/login";
       }
     }
   });
