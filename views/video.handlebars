@@ -31,9 +31,9 @@
         <div class="row">
             <video id="lecture-video" class="video-js vjs-default-skin" width="960" height="540" controls preload="auto" data-setup='{ "playbackRates": [0.5, 1, 1.5, 2] }'></video>
         </div>
+            <canvas></canvas>
         {{!-- <button type="button" class="btn btn-primary" id="scrShotBtn">ScreenShot</button> --}}
         <div class="row" id="message-container">
-            {{!-- <canvas></canvas> --}}
             <ul style="list-style: none;">
                 {{#each conversation.messages}}
                 <li>
@@ -76,12 +76,12 @@
             
             w = video.videoWidth* 0.75;
             h = video.videoHeight* 0.75;
-            console.log(video.videoWidth);
-            console.log(video.videoHeight);
-            canvas.width=w;
-            canvas.height=h;
-            console.log(canvas.width);
-            console.log(canvas.height);
+            //console.log(video.videoWidth);
+            //console.log(video.videoHeight);
+            canvas.width=4;
+            canvas.height=4;
+            //console.log(canvas.width);
+            //console.log(canvas.height);
         },false)
         $(document).ready(function () {
             $('#scrShotBtn').click(function(){
