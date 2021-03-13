@@ -15,16 +15,40 @@
         width: 20em;
         height: 50em;
     }
+    #message-container {
+        overflow-y: scroll;
+        height:8em;
+    }
     </style>
 </head>
 <body>
 	<div class="container">
         <div class="row">
+            <div class="col-sm d-flex align-items-center justify-content-start">
+                <a class="btn btn-warning bckBtn" href="/index" role="button">Back</a>
+            </div>
+        </div>
+        <div class="row">
             <video id="lecture-video" class="video-js vjs-default-skin" width="960" height="540" controls preload="auto" data-setup='{ "playbackRates": [0.5, 1, 1.5, 2] }'></video>
         </div>
-        <button type="button" class="btn btn-primary" id="scrShotBtn">ScreenShot</button>
+        {{!-- <button type="button" class="btn btn-primary" id="scrShotBtn">ScreenShot</button> --}}
+        <div class="row" id="message-container">
+            {{!-- <canvas></canvas> --}}
+            <ul style="list-style: none;">
+                {{#each conversation.messages}}
+                <li>
+                    <p>{{date}} {{time}} [{{author}}]: {{message}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
         <div class="row">
-            <canvas></canvas>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Send a message">
+                <div class="input-group-append">
+                    <button class="btn btn-warning" type="button">Send</button>
+                </div>
+            </div>
         </div>
 	</div>
     <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>

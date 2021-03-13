@@ -1,0 +1,36 @@
+{
+    "conversation": {
+        "messages": [
+            {
+                "author": "Me",
+                "message": "Welcome everyone. Ready to get started?",
+                "date": "1/1/21",
+                "time": "12:00PM"
+            },
+            {
+                "author": "Amy",
+                "message": "Yes!",
+                "date": "1/1/21",
+                "time": "12:01PM"
+            },
+            {
+                "author": "Alex",
+                "message": "Yee!",
+                "date": "1/1/21",
+                "time": "12:02PM"
+            },
+            {
+                "author": "Jack",
+                "message": "Yes. Thanks for the invite. I missed this lecture",
+                "date": "1/1/21",
+                "time": "12:03PM"
+            },
+            {
+                "author": "Vincent",
+                "message": "Yeep",
+                "date": "1/1/21",
+                "time": "12:04PM"
+            }
+        ]
+    }
+}
