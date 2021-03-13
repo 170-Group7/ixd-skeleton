@@ -1,15 +1,18 @@
 var checkboxes = document.getElementsByClassName("form-check-input");
-$("#selectAllBtn").click(() => {
+$("#selectBtn").click(() => {
   //alert(checkboxes.length);
-  for (var i in checkboxes) {
-    checkboxes[i].checked = true;
+  $("#selectBtn").text()
+  if($("#selectBtn").text() =="Select All") {
+    for (var i in checkboxes) {
+      checkboxes[i].checked = true;
+    }
+    $("#selectBtn").text("Deselect All")
   }
-});
-
-$("#cancelAllBtn").click(() => {
-  //alert(checkboxes.length);
-  for (var i in checkboxes) {
-    checkboxes[i].checked = false;
+  else {
+    for (var i in checkboxes) {
+      checkboxes[i].checked = false;
+    }
+    $("#selectBtn").text("Select All")
   }
 });
 
@@ -41,16 +44,16 @@ $("#sendBtn").click(e => {
       if (phone.length == 12) phones.push(phone);
     }
   }
-  console.log(phones.length);
+  // console.log(phones.length);
   if (phones.length != 0) {
     $.post("/notification", { phones: phones }, complete);
   } else {
-    alert("no add any participants' phone");
+    alert("Didn't add any participants' phone. Try again.");
   }
 });
 
 function complete() {
-  console.log("end");
+  // console.log("end");
 }
 function edit(e) {
   $(e).parent().html(`<div class="form-group w-50">
@@ -59,9 +62,9 @@ function edit(e) {
         </div>`);
 }
 function addPhoneNumber(e) {
-  console.log(e);
+  // console.log(e);
   let tel = $(e).prev().val();
-  console.log(tel);
+  // console.log(tel);
   $(e)
     .parent()
     .parent()
@@ -71,5 +74,5 @@ function addPhoneNumber(e) {
   //do something to backend
 }
 function kk() {
-  console.log("adf");
+  // console.log("adf");
 }
