@@ -32,8 +32,13 @@
                     {{/each}}
                 </div>
                  <div class="schedule">
-                     {{#each schedule}}
-                    <div class="schedule-unit" style=" grid-row-start:{{start}}; grid-row-end: {{end}};  border-style:solid red;"><b>{{title}}</b><p>{{Participants}}</p></div>
+                    {{#each schedule}}
+                    <a href="/video" style="text-decoration: none; color:black;">
+                        <div class="schedule-unit" style=" grid-row-start:{{start}}; grid-row-end: {{end}};  border-style:solid red;">
+                            <b>{{title}}</b>
+                            <p>{{Participants}}</p>
+                        </div>
+                    </a>
                     {{/each}}
                 </div>
             </div>
