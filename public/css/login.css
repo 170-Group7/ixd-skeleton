@@ -4,11 +4,11 @@ body
 }  
 #login{  
         padding: 80px;  
-        background: #FFD700;  
+        background: #ffbb3f; 
         border-radius: 15px ;  
 }  
 h1{  
-    color: #FFD700;  
+    color: #ffbb3f; 
     padding: 20px;  
 }  
 label{  

@@ -20,7 +20,7 @@ function initializePage() {
       if(!userinfo && !usertoken) {
         window.location.href = "/login";
       }
-      if (usertoken.status == "connected") {
+      else if (usertoken.status == "connected") {
         fillName(userinfo.name);
       }
     }

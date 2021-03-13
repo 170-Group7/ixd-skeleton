@@ -26,7 +26,7 @@ function initializePage() {
 
 function fillName(name) {
   let text = $("#greeting").text();
-  $("#greeting").text(`${text} ${name}`);
+  $("#greeting").text(`${text} ${name},`);
 }
 
 async function checkLoginState() {
