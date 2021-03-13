@@ -11,6 +11,7 @@ $(document).ready(function () {
     //console.log(participants[i].innerHTML);
     participants_labels.push(participants[i].innerHTML);
   }
+  setupFriendsClick();
 });
 
 $("#confirmBtn").click(function () {
@@ -27,3 +28,11 @@ $("#confirmBtn").click(function () {
     }
   );
 });
+
+
+function setupFriendsClick() {
+  $(".list-group-item").click((i) => {
+    let el = i.target;
+    el.classList.toggle("bg-warning");
+  });
+}
