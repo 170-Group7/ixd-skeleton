@@ -21,6 +21,7 @@ var messages = require("./routes/messages");
 var yourVideos = require("./routes/your-videos");
 var notification = require("./routes/notification");
 var schedule = require("./routes/schedule");
+var signUp = require("./routes/sign-up");
 const { response } = require("express");
 // Example route
 // var user = require('./routes/user');
@@ -65,6 +66,7 @@ app.get("/messages", messages.view);
 app.get("/your-videos", yourVideos.view);
 app.get("/notification", notification.view);
 app.get("/schedule", schedule.view);
+app.get("/sign-up", signUp.view);
 app.post("/notification", notification.sendSMS);
 app.post("/newevent", confirmation.newevent);
 //app.get("/video/:id", video.view);

@@ -28,17 +28,8 @@ function setUpLogInButton() {
     auth
       .signInWithEmailAndPassword(userName, pass)
       .then(userCredential => {
-        //use if viewing from local node server
         window.location.href = "/index";
-
-        //use if viewing from remote heroku server
-        // window.location.href = 'https://team7-a6.herokuapp.com/index'
       })
       .catch(e => alert(e));
-  });
-}
-function checkLoginState() {
-  FB.getLoginStatus(function (response) {
-    statusChangeCallback(response);
   });
 }
