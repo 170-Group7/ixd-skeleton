@@ -7,6 +7,7 @@ $(document).ready(function () {
 
 function initializePage() {
   setUpSignUpButton();
+  setUpCancelButton();
 }
 
 function setUpSignUpButton() {
@@ -23,4 +24,10 @@ function setUpSignUpButton() {
       window.location.href = "/login"
     }
   });
+}
+
+function setUpCancelButton() {
+  $("#cancel-btn").click(() => {
+    window.location.href = "/login"
+  })
 }
